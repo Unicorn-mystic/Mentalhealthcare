@@ -1,0 +1,519 @@
+<!DOCTYPE html><html>
+<head><meta charset="UTF-8">
+<title>Mental Health Care</title>
+<link rel="stylesheet" href="style.css">
+<style>
+*{
+box-sizing:border-box;
+margin:0;
+padding: 0;
+}
+html{
+scroll-behavior:smooth;
+}
+body{
+margin:0;
+background:linear-gradient(to bottom,#FFF9FC,#F4F8FF,#F8FFF8);
+font-family:Verdana,Arial,sans-serif;color:#444444;}
+.navbar{
+position:sticky;
+top:0;z-index:1000;display:flex;justify-content:space-between;
+align-items:center;background:linear-gradient(90deg,#7C5CBF,#5D9C82);
+padding:14px 4%;border-bottom:3px solid #B388EB;box-shadow:0px 2px 8px #DDDDDD;}
+.nav-links{
+list-style:none;display:flex;gap:24px;
+margin:0;padding:0;}
+.nav-links li{
+position:relative;}
+.nav-links li a{
+text-decoration:none;color:white;font-size:16px;
+font-weight:bold;padding:8px;display:block;transition:0.3s;}
+.nav-links li a:hover{
+color:#FFF3A6;}
+.dropdown{
+display:none;position:absolute;top:100%;left:0;
+background:white;list-style:none;margin:0;
+padding:0;min-width:220px;box-shadow:0px 4px 10px #CCCCCC;border-radius:8px;}
+.dropdown li{
+border-bottom:1px solid #EEEEEE;}
+.dropdown li:last-child{
+border-bottom:none;}
+.dropdown li a{
+color:#4E8C61;padding:10px;display:block;}
+.dropdown li a:hover{
+background:#F6F0FF;}
+.nav-links li:hover .dropdown{
+display:block;}
+marquee{
+background:#B388EB;color:white;padding:9px;font-weight:bold;}
+#home{color:#6B4FA1;
+}
+h1{
+text-align:center;font-size:46px;
+font-family:"Palatino Linotype",Georgia,serif;color:#6B4FA1;letter-spacing:1px;text-shadow:1px 1px 3px #E7D8FF;
+}
+h2{
+text-align:center;font-size:32px;font-family:"Palatino Linotype",Georgia,serif;
+color:#557C55;letter-spacing:.5px;
+}
+p{
+padding-left :30px;padding-right:30px;line-height:28px;text-align:justify;
+}
+ul{
+padding-left:55px;
+line-height:28px;
+}
+ol{
+padding-left:55px;
+line-height:28px;
+}
+img{
+display:block;
+margin:auto;
+border:none;background:transparent;
+background:none;
+padding:0;
+box-shadow:none;
+}
+input,select{
+padding:7px;
+}
+input[type=submit]{
+background:#4E8C61;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+cursor:pointer;
+}
+input[type=reset]{
+background:#B388EB;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+cursor:pointer;
+}
+hr{
+border:2px solid #D7B6F5;
+width:92%;
+}
+form{
+margin-left:35px;
+margin-right:35px;
+}
+h1{
+border:none;background:transparent;
+padding:12px 20px 12px 20px;
+background:hsl(280,60%,97%);
+}
+h2{
+border:3px double rgb(93,156,130);
+padding:10px 15px 10px 15px;
+}
+h3{
+border-left:6px solid #B388EB;
+padding:8px 12px 8px 12px;
+}
+.navbar{
+border-bottom:4px groove #B388EB;
+}
+#services{
+border:3px dashed rgb(124,92,191);
+padding:12px 15px 12px 15px;
+}
+#assessment{
+border:4px ridge hsl(282,55%,65%);
+padding:10px 10px 10px 10px;
+}
+#contact{
+border:4px inset #5D9C82;
+padding:12px;
+}
+#quiz label{
+display:block;
+text-align:left;
+margin-left:20px;
+padding:4px 0 4px 0;
+}
+header{background-color:rgb(110,85,180);color:white;text-align:center;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px;}
+.content{background-color:hsl(145,40%,96%);padding-top:30px;padding-right:40px;padding-bottom:30px;padding-left:40px;}
+.navbar{
+background:linear-gradient(90deg,#7C5CBF,#5D9C82);}
+.nav-links a{border-radius:8px;}
+.nav-links a:hover{background:#ffffff;color:#6B4FA1;transform:scale(1.05);}
+table td{border-radius:12px;box-shadow:0 3px 8px rgba(0,0,0,.08);transition:.3s;}
+table td:hover{transform:translateY(-4px);}
+#services{border:5px double #8E44AD;}
+#assessment{border:5px groove orange;}
+#awareness{border:4px ridge #5D9C82;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px;}
+#contact{border:4px dashed #B388EB;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px;}
+#quiz p{background:#F7F2FF;border-left:5px solid #8E44AD;padding:10px;border-radius:8px;}
+#quiz label{display:block;text-align:left;margin-left:25px;}
+input[type=button],input[type=submit],input[type=reset]{border-radius:8px;cursor:pointer;transition:.3s;}
+input[type=button]:hover,input[type=submit]:hover,input[type=reset]:hover{transform:scale(1.05);}
+body{
+background:linear-gradient(180deg,#FFFDFE,#F8F5FF,#F5FBF7,#F8FCFF);
+}
+h1{
+font-size:52px;
+letter-spacing:2px;
+margin-top:20px;
+text-shadow:0 2px 8px rgba(179,136,235,.25);
+}
+h2{
+border:none;
+background:transparent;
+margin:25px 0 10px;
+}
+hr{
+border:0;
+height:2px;
+background:linear-gradient(to right,transparent,#CDB4DB,#A8D5BA,transparent);
+margin:30px auto;
+}
+table td{
+border-radius:18px;
+padding:18px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:all .35s ease;
+}
+table td:hover{
+transform:translateY(-6px);
+box-shadow:0 14px 28px rgba(93,156,130,.18);
+}
+img{
+border-radius:18px;
+overflow:hidden;
+transition:transform .4s ease,box-shadow .4s ease;
+}
+img:hover{
+transform:scale(1.03);
+box-shadow:0 12px 24px rgba(0,0,0,.15);
+}
+input,select{
+border-radius:10px;
+border:1px solid #d8d8d8;
+}
+input:focus,select:focus{
+outline:none;
+border-color:#7C5CBF;
+box-shadow:0 0 10px rgba(124,92,191,.25);
+}
+#quiz p{
+box-shadow:0 4px 10px rgba(0,0,0,.05);
+}
+#services,#assessment,#contact,#awareness{
+border-radius:22px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+#services{
+border:2px solid rgba(179,136,235,.45);
+background:linear-gradient(180deg,#ffffff,#fcf8ff);
+}
+#assessment{
+border:2px solid rgba(93,156,130,.45);
+background:linear-gradient(180deg,#ffffff,#f8fff9);
+}
+#awareness{
+border:2px solid rgba(168,213,186,.55);
+background:#ffffff;
+}
+#contact{
+border:3px solid rgba(179,136,235,.75);
+background:#ffffff;
+}
+form{
+background:rgba(255,255,255,.72);
+border-radius:18px;
+padding:20px;
+backdrop-filter:blur(3px);
+}
+h2,h3{
+transition:.3s;
+}
+h2:hover,h3:hover{
+letter-spacing:1px;
+color:#6B4FA1;
+}
+
+.sectionline{width:120px;height:3px;background:linear-gradient(to right,#B388EB,#A8D5BA);margin:8px auto 18px;border-radius:4px;}
+</style></head>
+<body><nav class="navbar">
+<table border="0"><tr>
+<td><img src="logo.png"
+width="70"
+height="70"></td>
+<td><font face="Georgia"
+color="white"
+size="6"><b>
+Mental Health Care
+</b></font>
+<br><font face="Verdana"
+color="#E8F5E9"
+size="3">
+Healing Minds • Inspiring Lives
+</font></td>
+</tr></table>
+<ul class="nav-links"><li><a href="#home">Home</a></li>
+<li><a href="#services">Our Services ▼</a>
+<ul class="dropdown"><li><a href="#enroll">🌱 Enroll</a></li>
+<li><a href="#assessment">Assessment</a></li>
+<li><a href="#mood">Mood Tracker</a></li>
+<li><a href="#community">Community</a></li>
+<li><a href="#ai">AI Companion</a></li>
+<li><a href="#counselor">Counselor</a></li>
+<li><a href="#activities">Activities</a></li>
+</ul></li>
+<li><a href="#awareness">Awareness</a></li>
+<li><a href="#contact">Contact</a></li></ul>
+</nav><marquee
+behavior="scroll"
+direction="left"
+scrollamount="6">
+🌿 Mann Ki Baat, Dil Ka Sukoon 💚 |
+Har Kadam Better Mental Health Ki Ore 🌸 |
+Khud Se Dosti, Zindagi Se Mohabbat ✨ |
+Together We Heal, Together We Grow 🤝
+</marquee><br><br>
+<center><font
+face="Georgia"
+color="#4E8C61"
+size="7"><b>
+🌿 Mann Ki Baat, Dil Ka Sukoon 💚
+</b></font>
+<br><br><font
+face="Verdana"
+color="#8E44AD"
+size="4">
+Your Safe Space for Healing, Growth & Happiness
+</font></center>
+<br><hr>
+<h1 id="home">Mental Health Care</h1><br>
+<center>
+<table width="90%" cellpadding="18" cellspacing="18" border="0">
+<tr>
+<td width="60%" valign="top" bgcolor="#FFFFFF">
+<font face="Georgia"
+color="#8E44AD"
+size="6"><b>
+About Us
+</b></font>
+<br><br><p>
+Mental Health Care is a web application designed to support emotional well-being by providing access to counselors, wellness assessments, mood tracking, AI-powered guidance and self-care resources.
+<br><br>
+We believe every individual deserves emotional support, understanding and a safe place to heal. Our platform encourages users to care for both their mind and body through positive habits, self-awareness and professional guidance.
+</p></td>
+<td width="40%" align="center"><img src="mentalhealth.png"
+width="300"
+style="margin-top:-10px;"></td>
+</tr></table>
+</center><hr>
+<center id="services">
+<font face="Georgia" color="#8E24AA" size="6">
+<b>💚 Our Mental Health Services</b></font>
+</center><div class="sectionline"></div><br>
+<table width="90%" align="center" cellpadding="15" cellspacing="16">
+<tr><td bgcolor="#FFFFFF" align="center">
+<font size="5">🌱</font><br>
+<b>Enroll / Login</b><p>
+Create your account and begin your wellness journey safely.
+</p></td>
+<td bgcolor="#FDF1F7" align="center"><font size="5">🧠</font>
+<br>
+<b>🧠 Assessment Wellness Score</b>
+<p>Know your mental wellness through a simple assessment.</p></td></tr>
+<tr><td bgcolor="#F5EEFF" align="center">
+<font size="5">😊</font><br>
+<b id="mood">😊 Mood Tracker & Journal</b>
+<p>Track emotions and record your daily thoughts.</p></td>
+<td bgcolor="#FFFFFF" align="center"><font size="5">🤝</font>
+<br>
+<b id="community">🤝 Community Groups</b>
+<p>Connect with others in a safe and positive environment.</p></td></tr>
+<tr><td bgcolor="#FFFFFF" align="center">
+<font size="5">💚</font><br>
+<b id="ai">💚 AI Mental Health Companion</b>
+<p>Receive supportive conversations whenever you need them.</p></td>
+<td bgcolor="#FDF1F7" align="center"><font size="5">👩‍⚕️</font>
+<br><b>Counselor Hub</b>
+<p>
+<b id="counselor">👩‍⚕ Counselor & Appointment Hub</b>
+</p></td>
+</tr><tr>
+<td bgcolor="#F5EEFF" align="center"><font size="5">🌸</font>
+<br>
+<b id="activities">🌸 Wellness Activities</b>
+<p>Practice meditation, breathing exercises and self-care.</p></td>
+<td align="center"><img src="lavendar.jpg"
+width="220"
+style="margin-top:15px;"></td>
+</tr></table>
+<hr><center>
+<font face="Georgia"
+color="#8E44AD"
+size="6"><b>
+Guide to Our Services
+</b></font>
+</center><div class="sectionline"></div><br>
+<table width="90%" align="center" cellpadding="18">
+<tr><td bgcolor="#FFFFFF">
+<ol>
+<li>Register or Login to your account.</li>
+<li>Complete the Wellness Assessment.</li>
+<li>View your Wellness Score.</li><li>Track your Mood and Journal.</li>
+<li>Join Community Groups & Peer Support.</li>
+<li>Chat with the AI Mental Health Companion.</li>
+<li>Book an Appointment with a Counselor.</li>
+<li>Participate in Wellness Activities and Gamification.</li>
+</ol></td>
+</tr></table>
+<hr><center>
+<font face="Georgia"
+color="#8E44AD"
+size="6"><b>🌱 Enroll</b>
+</font><div class="sectionline"></div><center id="enroll">
+<br>
+<table width="85%" cellpadding="20" cellspacing="15">
+<tr><td width="65%" bgcolor="#FFFFFF">
+<form onsubmit="alert('✅ Registration Successful! Thank you for enrolling.'); return false;"><label><b>First Name:</b></label><br>
+<input type="text" size="40"><br><br><label><b>Last Name:</b></label><br>
+<input type="text" size="40"><br><br><label><b>Email:</b></label><br>
+<input type="email" size="40"><br><br><label><b>Password:</b></label><br>
+<input type="password" size="40"><br><br>
+<label><b>Gender:</b></label><br><br><input type="radio" name="gender"> Male
+&nbsp;&nbsp;
+<input type="radio" name="gender"> Female
+&nbsp;&nbsp;
+<input type="radio" name="gender"> Other
+<br><br>
+<label><b>Select Age Group</b></label><br>
+<select><option>Below 18</option>
+<option>18-25</option><option>26-40</option>
+<option>41-60</option><option>Above 60</option>
+</select><br><br>
+<label><b>Services Interested In</b></label>
+<br><br>
+<input type="checkbox"> Assessment Wellness Score
+<br>
+<input type="checkbox"> Mood Tracker & Journal
+<br>
+<input type="checkbox"> Community Groups
+<br>
+<input type="checkbox"> AI Mental Health Companion
+<br><input type="checkbox"> Counselor Hub
+<br>
+<input type="checkbox"> Wellness Activities
+<br><br><center>
+<input type="submit" value="Submit">
+<input type="reset" value="Clear">
+</center>
+</form></td>
+<td width="35%" align="center"><img src="flowers.jpg"
+width="300"
+style="border:none;background:transparent;padding:0;background:none;">
+<br><font color="#8E24AA">
+<b>Bloom with Hope 🌷</b></font></td></tr></table></center>
+<hr>
+<center id="assessment">
+<font face="Georgia" color="#8E24AA" size="6"><b>🧠 Assessment & Wellness Score</b></font>
+</center><div class="sectionline"></div>
+<br>
+<div style="width:90%;margin:auto;background:#FFFFFF;padding:20px;border-radius:10px;box-shadow:0px 2px 8px #DDD;">
+<p><b>Instructions:</b> Answer all 10 questions honestly. Click <b>Get Wellness Score</b> to view your result.</p>
+<form id="quiz">
+<p><b>Q1. Imagine you have an important task tomorrow, but you're not fully prepared.</b></p><label><input type='radio' name='q1' value='4'> I'll do my best and figure it out.</label><br><label><input type='radio' name='q1' value='3'> I'm worried but I'll prepare.</label><br><label><input type='radio' name='q1' value='2'> I keep thinking about what could go wrong.</label><br><label><input type='radio' name='q1' value='1'> I feel like giving up.</label><br><br><p><b>Q2. If someone criticizes your work...</b></p><label><input type='radio' name='q2' value='4'> I learn from it.</label><br><label><input type='radio' name='q2' value='3'> I recover after some time.</label><br><label><input type='radio' name='q2' value='2'> I think about it for days.</label><br><label><input type='radio' name='q2' value='1'> I lose confidence.</label><br><br><p><b>Q3. When you're alone...</b></p><label><input type='radio' name='q3' value='4'> I enjoy my own company.</label><br><label><input type='radio' name='q3' value='3'> I think about future goals.</label><br><label><input type='radio' name='q3' value='2'> I replay past mistakes.</label><br><label><input type='radio' name='q3' value='1'> My thoughts become overwhelming.</label><br><br><p><b>Q4. You suddenly have a free day.</b></p><label><input type='radio' name='q4' value='4'> Enjoy hobbies.</label><br><label><input type='radio' name='q4' value='3'> Relax.</label><br><label><input type='radio' name='q4' value='2'> Waste the day.</label><br><label><input type='radio' name='q4' value='1'> Stay in bed.</label><br><br><p><b>Q5. When facing problems...</b></p><label><input type='radio' name='q5' value='4'> Seek support.</label><br><label><input type='radio' name='q5' value='3'> Sometimes ask for help.</label><br><label><input type='radio' name='q5' value='2'> Handle everything myself.</label><br><label><input type='radio' name='q5' value='1'> I have nobody.</label><br><br><p><b>Q6. At the end of most days...</b></p><label><input type='radio' name='q6' value='4'> I feel proud.</label><br><label><input type='radio' name='q6' value='3'> It was normal.</label><br><label><input type='radio' name='q6' value='2'> I feel exhausted.</label><br><label><input type='radio' name='q6' value='1'> Emotionally drained.</label><br><br><p><b>Q7. Which sounds most like you?</b></p><label><input type='radio' name='q7' value='4'> Problems are temporary.</label><br><label><input type='radio' name='q7' value='3'> Every problem has a solution.</label><br><label><input type='radio' name='q7' value='2'> Problems stay with me.</label><br><label><input type='radio' name='q7' value='1'> Life feels hopeless.</label><br><br><p><b>Q8. When something good happens...</b></p><label><input type='radio' name='q8' value='4'> I enjoy it for a long time.</label><br><label><input type='radio' name='q8' value='3'> Happy for a while.</label><br><label><input type='radio' name='q8' value='2'> Only briefly.</label><br><label><input type='radio' name='q8' value='1'> I hardly feel happy.</label><br><br><p><b>Q9. Your current lifestyle is...</b></p><label><input type='radio' name='q9' value='4'> Healthy and balanced.</label><br><label><input type='radio' name='q9' value='3'> Mostly healthy.</label><br><label><input type='radio' name='q9' value='2'> Unorganized.</label><br><label><input type='radio' name='q9' value='1'> I struggle with self-care.</label><br><br><p><b>Q10. If life stayed the same for one year...</b></p><label><input type='radio' name='q10' value='4'> I'd be happy.</label><br><label><input type='radio' name='q10' value='3'> I'd be comfortable.</label><br><label><input type='radio' name='q10' value='2'> I'd be worried.</label><br><label><input type='radio' name='q10' value='1'> I wouldn't want that.</label><br><br>
+<center>
+<input type="button" value="Get Wellness Score" onclick="calculateScore()">
+<input type="reset" value="Reset">
+</center>
+</form>
+<div id="resultBox" style="display:none;margin-top:20px;padding:15px;background:#F5EEFF;border-radius:8px;">
+<h3 id="score"></h3>
+<h3 id="level"></h3>
+<p id="message"></p>
+</div>
+</div>
+<script>
+function calculateScore(){
+let total=0;
+for(let i=1;i<=10;i++){
+let a=document.querySelector('input[name=q'+i+']:checked');
+if(!a){alert('Please answer all questions.');return;}
+total+=parseInt(a.value);
+}
+let level,msg;
+if(total>=36){level='🌟 Flourishing';msg='Excellent emotional resilience.';}
+else if(total>=30){level='🌿 Healthy';msg='Overall good mental well-being.';}
+else if(total>=24){level='🌼 Needs Attention';msg='Some stress is present. Improve self-care.';}
+else if(total>=16){level='🍂 At Risk';msg='Consider talking with someone you trust.';}
+else{level='❤️ High Concern';msg='Please seek support from a trusted person or mental health professional.';}
+document.getElementById('resultBox').style.display='block';
+document.getElementById('score').innerHTML='Wellness Score: '+total+' / 40';
+document.getElementById('level').innerHTML=level;
+document.getElementById('message').innerHTML=msg;
+}
+</script>
+<hr><hr>
+<center>
+<font face="Georgia" color="#8E24AA" size="6">
+<b>🌼 Mental Health Awareness</b></font><div class="sectionline"></div>
+<center id="awareness"><br>
+<iframe
+src=""
+name="iframe_a"
+width="100%"
+height="320"
+title="Mental Health Awareness"></iframe>
+<br><br><center>
+<a href="awareness.html" target="iframe_a">
+<font color="#2E8B57" size="4">
+<b>🌿 Click Here to View Mental Health Awareness 🌿</b>
+</font></a>
+</center><hr>
+<center>
+<font face="Georgia" color="#8E24AA" size="6">
+<b>📞 Contact Us</b></font><div class="sectionline"></div>
+<center id="contact"><br>
+<table width="90%" cellpadding="20" cellspacing="15" align="center">
+<tr><td width="65%" bgcolor="#FFFFFF">
+<center><font face="Verdana" size="4">
+📧 <b>Email</b><br>
+<a href="mailto:mentalhealthcare@gmail.com">mentalhealthcare@gmail.com</a>
+<br><br>
+📞 <b>Phone</b><br>
++91 9876543210
+<br><br>
+🌐 <b>Website</b><br>
+<a href="https://www.who.int/health-topics/mental-health" target="_blank">World Health Organization (WHO)</a>
+<br><br>
+📍 Bangalore, Karnataka, India
+</font></center>
+</td><td width="35%" align="center">
+<img src="lavendar.jpg"
+width="250"
+style="border:none;background:transparent;padding:0;background:none;">
+</td></tr>
+</table><br>
+<hr><center>
+<font face="Georgia" color="#8E24AA" size="6">
+<b>🤝 Our Promise</b></font>
+</center><div class="sectionline"></div><br>
+<table width="90%" cellpadding="18" align="center">
+<tr><td bgcolor="#F3E5F5">
+<p>💚 Every mind deserves care, kindness and hope.
+Our mission is to create a safe and welcoming space where everyone feels heard, respected and supported throughout their mental wellness journey.
+Together, we can build healthier minds, stronger communities and happier lives.
+</p></td>
+</tr></table>
+<br>
+<marquee behavior="alternate" scrollamount="5" bgcolor="#8E24AA">
+<font color="white" size="4"><b>
+🌿 Mann Ki Baat, Dil Ka Sukoon 💚 |
+Believe in Yourself 🌸 |
+Together Towards Better Mental Wellness 🤝
+</b></font>
+</marquee><br>
+<center>
+<font face="Verdana" color="#2E8B57" size="2">© 2026 Mental Health Care
+<br>Designed for Educational Purpose Only</font></center></body></html>
