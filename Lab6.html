@@ -1,0 +1,749 @@
+<!DOCTYPE html> <html>
+<head> <meta charset="UTF-8">
+<title>Mental Health Care</title> <style>*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{margin:0;background:linear-gradient(180deg,#FFFDFE,#F8F5FF,#F5FBF7,#F8FCFF);font-family:Verdana,Arial,sans-serif;color:#444444;}.navbar{position:sticky;top:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,#7C5CBF,#5D9C82);padding:14px 4%;border-bottom:4px groove #B388EB;box-shadow:0px 2px 8px #DDDDDD;}.nav-links{list-style:none;display:flex;gap:24px;}.nav-links li{position:relative;}.nav-links li a{text-decoration:none;color:white;font-size:16px;font-weight:bold;padding:8px;display:block;transition:0.3s;border-radius:8px;}.nav-links li a:hover{color:#6B4FA1;background:#FFFFFF;transform:scale(1.05);}.dropdown{display:none;position:absolute;top:100%;left:0;background:white;list-style:none;min-width:220px;box-shadow:0px 4px 10px #CCCCCC;border-radius:8px;padding:0;}.dropdown li{border-bottom:1px solid #EEEEEE;}.dropdown li a{color:#4E8C61;padding:10px;}.nav-links li:hover .dropdown{display:block;}marquee{background:#B388EB;color:white;padding:9px;font-weight:bold;}h1{text-align:center;font-size:52px;font-family:"Palatino Linotype",Georgia,serif;color:#6B4FA1;letter-spacing:2px;margin-top:20px;text-shadow:0 2px 8px rgba(179,136,235,.25);}h2{text-align:center;font-size:32px;font-family:"Palatino Linotype",Georgia,serif;color:#557C55;margin:25px 0 10px;}h3{border-left:6px solid #B388EB;padding:8px 12px;}p{padding-left:30px;padding-right:30px;line-height:28px;text-align:justify;}ul{padding-left:55px;line-height:28px;}ol{padding-left:55px;line-height:28px;}img{display:block;margin:auto;border-radius:18px;transition:transform .4s ease,box-shadow .4s ease;}img:hover{transform:scale(1.03);box-shadow:0 12px 24px rgba(0,0,0,.15);}input,select{padding:7px;border-radius:10px;border:1px solid #d8d8d8;}input:focus,select:focus{outline:none;border-color:#7C5CBF;box-shadow:0 0 10px rgba(124,92,191,.25);}input[type=button],input[type=submit],input[type=reset]{border-radius:8px;cursor:pointer;transition:.3s;border:none;padding:10px 20px;}input[type=submit]{background:#4E8C61;color:white;}input[type=reset]{background:#B388EB;color:white;}input[type=button]:hover,input[type=submit]:hover,input[type=reset]:hover{transform:scale(1.05);}hr{border:0;height:2px;background:linear-gradient(to right,transparent,#CDB4DB,#A8D5BA,transparent);margin:30px auto;width:92%;}form{margin-left:35px;margin-right:35px;background:rgba(255,255,255,.72);border-radius:18px;padding:20px;}table td{border-radius:18px;padding:18px;box-shadow:0 8px 20px rgba(0,0,0,.08);transition:all .35s ease;}table td:hover{transform:translateY(-4px);}#services,#assessment,#contact,#awareness{border-radius:22px;box-shadow:0 10px 25px rgba(0,0,0,.08);}#services{border:2px solid rgba(179,136,235,.45);background:linear-gradient(180deg,#ffffff,#fcf8ff);padding:12px 15px;}#assessment{border:2px solid rgba(93,156,130,.45);background:linear-gradient(180deg,#ffffff,#f8fff9);padding:10px;}#awareness{border:2px solid rgba(168,213,186,.55);background:#ffffff;padding:20px;}#contact{border:3px solid rgba(179,136,235,.75);background:#ffffff;padding:20px;}.sectionline{width:120px;height:3px;background:linear-gradient(to right,#B388EB,#A8D5BA);margin:8px auto 18px;border-radius:4px;}#registrationMessage{margin-top:15px;padding:10px;text-align:center;font-weight:bold;border-radius:8px;}.valid{color:#2E7D32;background:#E8F5E9;}.invalid{color:#C62828;background:#FFEBEE;}.validInput{border:2px solid #2E7D32;}.invalidInput{border:2px solid #C62828;}#quiz label{display:block;text-align:left;margin-left:25px;padding:4px 0;}#quiz p{background:#F7F2FF;border-left:5px solid #8E44AD;padding:10px;border-radius:8px;}#resultBox{display:none;margin-top:20px;padding:15px;background:#F5EEFF;border-radius:8px;}
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #e8f5e9, #e3f2fd);
+    color: #263238;
+}
+
+header {
+    background: #37474f;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 25px auto;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #37474f;
+}
+
+.week-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.day {
+    background: #f5f5f5;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.emoji-btn {
+    font-size: 30px;
+    border: 2px solid transparent;
+    background: white;
+    padding: 8px;
+    margin: 4px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.emoji-btn:hover {
+    transform: scale(1.1);
+    background: #e8f5e9;
+}
+
+.emoji-btn.selected {
+    border: 3px solid #37474f;
+    background: #c8e6c9;
+    transform: scale(1.15);
+}
+
+.action-btn {
+    background: #37474f;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.action-btn:hover {
+    background: #263238;
+}
+
+.result {
+    background: #f1f8e9;
+    padding: 18px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.score {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.suggestions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 10px;
+}
+
+.suggestion {
+    background: #eceff1;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.history-item {
+    background: #eceff1;
+    padding: 15px;
+    margin: 8px 0;
+    border-left: 5px solid #37474f;
+    border-radius: 8px;
+}
+
+</style>
+</head> <body>
+<nav class="navbar"> <table border="0">
+<tr> <td>
+<img src="logo.png" width="70" height="70"> </td>
+<td> <font face="Georgia" color="white" size="6">
+<b>Mental Health Care</b> </font>
+<br> <font face="Verdana" color="#E8F5E9" size="3">
+Healing Minds • Inspiring Lives </font>
+</td> </tr>
+</table> <ul class="nav-links">
+<li> <a href="#home">Home</a>
+</li> <li>
+<a href="#services">Our Services ▼</a> <ul class="dropdown">
+<li> <a href="#enroll">🌱 Enroll</a>
+</li> <li>
+<a href="#assessment">Assessment</a> </li>
+<li> <a href="#mood">Mood Tracker</a>
+</li> <li>
+<a href="#community">Community</a> </li>
+<li> <a href="#ai">AI Companion</a>
+</li> <li>
+<a href="#counselor">Counselor</a> </li>
+<li> <a href="#activities">Activities</a>
+</li> </ul>
+</li> <li>
+<a href="#awareness">Awareness</a> </li>
+<li> <a href="#contact">Contact</a>
+</li> </ul>
+</nav> <marquee
+behavior="scroll" direction="left"
+scrollamount="6"> 🌿 Mann Ki Baat, Dil Ka Sukoon 💚 |
+Har Kadam Better Mental Health Ki Ore 🌸 | Khud Se Dosti, Zindagi Se Mohabbat ✨ |
+Together We Heal, Together We Grow 🤝 </marquee>
+<br> <br>
+<center> <font face="Georgia" color="#4E8C61" size="7">
+<b>🌿 Mann Ki Baat, Dil Ka Sukoon 💚</b> </font>
+<br> <br>
+<font face="Verdana" color="#8E44AD" size="4"> Your Safe Space for Healing, Growth & Happiness
+</font> </center>
+<br> <hr>
+<h1 id="home"> Mental Health Care
+</h1> <br>
+<center> <table width="90%" cellpadding="18" cellspacing="18" border="0">
+<tr> <td width="60%" valign="top" bgcolor="#FFFFFF">
+<font face="Georgia" color="#8E44AD" size="6"> <b>About Us</b>
+</font> <br>
+<br> <p>
+Mental Health Care is a web application designed to support emotional well-being by providing access to counselors, wellness assessments, mood tracking, AI-powered guidance and self-care resources. <br>
+<br> We believe every individual deserves emotional support, understanding and a safe place to heal. Our platform encourages users to care for both their mind and body through positive habits, self-awareness and professional guidance.
+</p> </td>
+<td width="40%" align="center"> <img src="mentalhealth.png" width="300">
+</td> </tr>
+</table> </center>
+<hr> <center id="services">
+<font face="Georgia" color="#8E24AA" size="6"> <b>💚 Our Mental Health Services</b>
+</font> </center>
+<div class="sectionline"> </div>
+<table width="90%" align="center" cellpadding="15" cellspacing="16"> <tr>
+<td bgcolor="#FFFFFF" align="center"> <font size="5">🌱</font>
+<br> <b>Enroll / Login</b>
+<p> Create your account and begin your wellness journey safely.
+</p> </td>
+<td bgcolor="#FDF1F7" align="center"> <font size="5">🧠</font>
+<br> <b>🧠 Assessment Wellness Score</b>
+<p> Know your mental wellness through a simple assessment.
+</p> </td>
+</tr> <tr>
+<td bgcolor="#F5EEFF" align="center"> <font size="5">😊</font>
+<br> <b>😊 Mood Tracker & Journal</b>
+<p> Track emotions and record your daily thoughts.
+</p> </td>
+<td bgcolor="#FFFFFF" align="center"> <font size="5">🤝</font>
+<br> <b id="community">🤝 Community Groups</b>
+<p> Connect with others in a safe and positive environment.
+</p> </td>
+</tr> <tr>
+<td bgcolor="#FFFFFF" align="center"> <font size="5">💚</font>
+<br> <b id="ai">💚 AI Mental Health Companion</b>
+<p> Receive supportive conversations whenever you need them.
+</p> </td>
+<td bgcolor="#FDF1F7" align="center"> <font size="5">👩‍⚕️</font>
+<br> <b id="counselor">👩‍⚕ Counselor & Appointment Hub</b>
+<p> Connect with counselors and book appointments.
+</p> </td>
+</tr> <tr>
+<td bgcolor="#F5EEFF" align="center"> <font size="5">🌸</font>
+<br> <b id="activities">🌸 Wellness Activities</b>
+<p> Practice meditation, breathing exercises and self-care.
+</p> </td>
+<td align="center"> <img src="lavendar.jpg" width="220">
+</td> </tr>
+</table> <hr>
+<center> <font face="Georgia" color="#8E44AD" size="6">
+<b>Guide to Our Services</b> </font>
+</center> <div class="sectionline">
+</div> <table width="90%" align="center" cellpadding="18">
+<tr> <td bgcolor="#FFFFFF">
+<ol> <li>Register or Login to your account.</li>
+<li>Complete the Wellness Assessment.</li> <li>View your Wellness Score.</li>
+<li>Track your Mood and Journal.</li> <li>Join Community Groups & Peer Support.</li>
+<li>Chat with the AI Mental Health Companion.</li> <li>Book an Appointment with a Counselor.</li>
+<li>Participate in Wellness Activities and Gamification.</li> </ol>
+</td> </tr>
+</table> <hr>
+<center id="enroll"> <font face="Georgia" color="#8E24AA" size="6">
+<b>🌱 Enroll / Registration</b> </font>
+<div class="sectionline"> </div>
+</center> <table width="85%" cellpadding="20" cellspacing="15" align="center">
+<tr> <td width="65%" bgcolor="#FFFFFF">
+<form id="registrationForm" onsubmit="return validateRegistration()">
+<label> <b>First Name:</b>
+</label> <br>
+<input type="text"
+id="firstName" size="40">
+<br> <br>
+<label> <b>Last Name:</b>
+</label> <br>
+<input type="text"
+id="lastName" size="40">
+<br> <br>
+<label> <b>Email:</b>
+</label> <br>
+<input type="text"
+id="email" size="40">
+<br> <br>
+<label> <b>Mobile Number:</b>
+</label> <br>
+<input type="text"
+id="mobile" size="40">
+<br> <br>
+<label> <b>Password:</b>
+</label> <br>
+<input type="password"
+id="password" size="40">
+<br> <br>
+<label> <b>Confirm Password:</b>
+</label> <br>
+<input type="password"
+id="confirmPassword" size="40">
+<br> <br>
+<label> <b>Gender:</b>
+</label> <br>
+<br> <input
+type="radio" name="gender"
+value="Male"> Male
+&nbsp;&nbsp; <input
+type="radio" name="gender"
+value="Female"> Female
+&nbsp;&nbsp; <input
+type="radio" name="gender"
+value="Other"> Other
+<br> <br>
+<label> <b>Select Age Group:</b>
+</label> <br>
+<select id="ageGroup"> <option value="">
+Select Age </option>
+<option> Below 18
+</option> <option>
+18-25 </option>
+<option> 26-40
+</option> <option>
+41-60 </option>
+<option> Above 60
+</option> </select>
+<br> <br>
+<label> <b>Services Interested In:</b>
+</label> <br>
+<br> <input type="checkbox">
+Assessment Wellness Score <br>
+<input type="checkbox"> Mood Tracker & Journal
+<br> <input type="checkbox">
+Community Groups <br>
+<input type="checkbox"> AI Mental Health Companion
+<br> <input type="checkbox">
+Counselor Hub <br>
+<input type="checkbox"> Wellness Activities
+<br> <br>
+<center> <input
+type="submit" value="Register">
+<input type="reset"
+value="Clear"> </center>
+<p id="registrationMessage"> </p>
+</form> </td>
+<td width="35%" align="center"> <img
+src="flowers.jpg" width="300">
+<br> <font color="#8E24AA">
+<b>Bloom with Hope 🌷</b> </font>
+</td> </tr>
+</table> <hr>
+<center id="assessment"> <font face="Georgia"
+color="#8E24AA" size="6">
+<b>🧠 Assessment & Wellness Score</b> </font>
+</center> <div class="sectionline">
+</div> <div
+style="width:90%;margin:auto;background:#FFFFFF;padding:20px;border-radius:10px;box-shadow:0px 2px 8px #DDD;"> <p>
+<b>Instructions:</b> Answer all 10 questions honestly.
+Click <b>Get Wellness Score</b> to view your result.
+</p> <form id="quiz">
+<p> <b>Q1. Imagine you have an important task tomorrow, but you're not fully prepared.</b>
+</p> <label>
+<input type="radio" name="q1" value="4"> I'll do my best and figure it out.
+</label> <label>
+<input type="radio" name="q1" value="3"> I'm worried but I'll prepare.
+</label> <label>
+<input type="radio" name="q1" value="2"> I keep thinking about what could go wrong.
+</label> <label>
+<input type="radio" name="q1" value="1"> I feel like giving up.
+</label> <br>
+<p> <b>Q2. If someone criticizes your work...</b>
+</p> <label>
+<input type="radio" name="q2" value="4"> I learn from it.
+</label> <label>
+<input type="radio" name="q2" value="3"> I recover after some time.
+</label> <label>
+<input type="radio" name="q2" value="2"> I think about it for days.
+</label> <label>
+<input type="radio" name="q2" value="1"> I lose confidence.
+</label> <br>
+<p> <b>Q3. When you're alone...</b>
+</p> <label>
+<input type="radio" name="q3" value="4"> I enjoy my own company.
+</label> <label>
+<input type="radio" name="q3" value="3"> I think about future goals.
+</label> <label>
+<input type="radio" name="q3" value="2"> I replay past mistakes.
+</label> <label>
+<input type="radio" name="q3" value="1"> My thoughts become overwhelming.
+</label> <br>
+<p> <b>Q4. You suddenly have a free day.</b>
+</p> <label>
+<input type="radio" name="q4" value="4"> Enjoy hobbies.
+</label> <label>
+<input type="radio" name="q4" value="3"> Relax.
+</label> <label>
+<input type="radio" name="q4" value="2"> Waste the day.
+</label> <label>
+<input type="radio" name="q4" value="1"> Stay in bed.
+</label> <br>
+<p> <b>Q5. When facing problems...</b>
+</p> <label>
+<input type="radio" name="q5" value="4"> Seek support.
+</label> <label>
+<input type="radio" name="q5" value="3"> Sometimes ask for help.
+</label> <label>
+<input type="radio" name="q5" value="2"> Handle everything myself.
+</label> <label>
+<input type="radio" name="q5" value="1"> I have nobody.
+</label> <br>
+<p> <b>Q6. At the end of most days...</b>
+</p> <label>
+<input type="radio" name="q6" value="4"> I feel proud.
+</label> <label>
+<input type="radio" name="q6" value="3"> It was normal.
+</label> <label>
+<input type="radio" name="q6" value="2"> I feel exhausted.
+</label> <label>
+<input type="radio" name="q6" value="1"> Emotionally drained.
+</label> <br>
+<p> <b>Q7. Which sounds most like you?</b>
+</p> <label>
+<input type="radio" name="q7" value="4"> Problems are temporary.
+</label> <label>
+<input type="radio" name="q7" value="3"> Every problem has a solution.
+</label> <label>
+<input type="radio" name="q7" value="2"> Problems stay with me.
+</label> <label>
+<input type="radio" name="q7" value="1"> Life feels hopeless.
+</label> <br>
+<p> <b>Q8. When something good happens...</b>
+</p> <label>
+<input type="radio" name="q8" value="4"> I enjoy it for a long time.
+</label> <label>
+<input type="radio" name="q8" value="3"> Happy for a while.
+</label> <label>
+<input type="radio" name="q8" value="2"> Only briefly.
+</label> <label>
+<input type="radio" name="q8" value="1"> I hardly feel happy.
+</label> <br>
+<p> <b>Q9. Your current lifestyle is...</b>
+</p> <label>
+<input type="radio" name="q9" value="4"> Healthy and balanced.
+</label> <label>
+<input type="radio" name="q9" value="3"> Mostly healthy.
+</label> <label>
+<input type="radio" name="q9" value="2"> Unorganized.
+</label> <label>
+<input type="radio" name="q9" value="1"> I struggle with self-care.
+</label> <br>
+<p> <b>Q10. If life stayed the same for one year...</b>
+</p> <label>
+<input type="radio" name="q10" value="4"> I'd be happy.
+</label> <label>
+<input type="radio" name="q10" value="3"> I'd be comfortable.
+</label> <label>
+<input type="radio" name="q10" value="2"> I'd be worried.
+</label> <label>
+<input type="radio" name="q10" value="1"> I wouldn't want that.
+</label> <br>
+<br> <center>
+<input type="button"
+value="Get Wellness Score" onclick="calculateScore()">
+<input type="reset"
+value="Reset"> </center>
+</form> <div id="resultBox">
+<h3 id="score"> </h3>
+<h3 id="level"> </h3>
+<p id="message"> </p>
+</div> </div>
+
+<hr>
+<section id="mood" class="container">
+    <div class="card">
+        <header>
+            <h1>😊 Weekly Mood Tracker</h1>
+            <p>Track your mood for 7 days and understand your emotional week.</p>
+        </header>
+
+        <div class="week-info">
+            <h2>Week <span id="weekNumber">1</span></h2>
+            <h2 id="weekDate"></h2>
+        </div>
+
+        <div id="moodDays"></div>
+
+        <center>
+            <button class="action-btn" type="button" onclick="analyzeMood()">Analyze My Week</button>
+        </center>
+
+        <div id="moodResult" class="result" style="display:none;">
+            <h2 id="moodTitle"></h2>
+            <p class="score">Mood Score: <span id="moodScore"></span> / 35</p>
+            <p id="moodStatement"></p>
+
+            <h2>🌱 Suggestions</h2>
+            <div id="suggestions" class="suggestions"></div>
+        </div>
+
+        <div id="moodHistory" style="display:none;">
+            <h2>📊 Cumulative Mood Tracking</h2>
+            <div id="historyList"></div>
+        </div>
+    </div>
+</section>
+
+<hr> <center>
+<font face="Georgia" color="#8E24AA"
+size="6"> <b>🌼 Mental Health Awareness</b>
+</font> <div class="sectionline">
+</div> <center id="awareness">
+<iframe src=""
+name="iframe_a" width="100%"
+height="320" title="Mental Health Awareness">
+</iframe> <br>
+<br> <a href="awareness.html"
+target="iframe_a"> <font color="#2E8B57" size="4">
+<b> 🌿 Click Here to View Mental Health Awareness 🌿
+</b> </font>
+</a> </center>
+</center> <hr>
+<center> <font face="Georgia"
+color="#8E24AA" size="6">
+<b>📞 Contact Us</b> </font>
+<div class="sectionline"> </div>
+<center id="contact"> <table
+width="90%" cellpadding="20"
+cellspacing="15" align="center">
+<tr> <td width="65%" bgcolor="#FFFFFF">
+<form id="contactForm" onsubmit="return validateContact()"> <label>
+<b>Name:</b> </label>
+<br> <input type="text" id="contactName" size="40">
+<br> <br>
+<label> <b>Email:</b>
+</label> <br>
+<input type="text" id="contactEmail" size="40"> <br>
+<br> <label>
+<b>Mobile Number:</b> </label>
+<br> <input type="text" id="contactMobile" size="40">
+<br> <br>
+<label> <b>Message:</b>
+</label> <br>
+<textarea id="contactMessage" rows="5" cols="42"> </textarea>
+<br> <br>
+<center> <input type="submit" value="Send Message">
+<input type="reset" value="Clear"> </center>
+<p id="contactMessageBox"> </p>
+</form> </td>
+<td width="35%" align="center"> <img
+src="lavendar.jpg" width="250">
+<br> <br>
+<font face="Verdana" size="4"> 📧 <b>Email</b>
+<br> <a href="mailto:mentalhealthcare@gmail.com">
+mentalhealthcare@gmail.com </a>
+<br> <br>
+📞 <b>Phone</b> <br>
++91 9876543210 <br>
+<br> 🌐 <b>Website</b>
+<br> <a
+href="https://www.who.int/health-topics/mental-health" target="_blank">
+World Health Organization (WHO) </a>
+<br> <br>
+📍 Bangalore, Karnataka, India </font>
+</td> </tr>
+</table> <br>
+<hr> <center>
+<font face="Georgia" color="#8E24AA"
+size="6"> <b>🤝 Our Promise</b>
+</font> </center>
+<div class="sectionline"> </div>
+<table width="90%" cellpadding="18"
+align="center"> <tr>
+<td bgcolor="#F3E5F5"> <p>
+💚 Every mind deserves care, kindness and hope. Our mission is to create a safe and welcoming space where everyone feels heard, respected and supported throughout their mental wellness journey.
+Together, we can build healthier minds, stronger communities and happier lives. </p>
+</td> </tr>
+</table> <br>
+<marquee behavior="alternate"
+scrollamount="5" bgcolor="#8E24AA">
+<font color="white" size="4"> <b>
+🌿 Mann Ki Baat, Dil Ka Sukoon 💚 | Believe in Yourself 🌸 |
+Together Towards Better Mental Wellness 🤝 </b>
+</font> </marquee>
+<br> <center>
+<font face="Verdana" color="#2E8B57"
+size="2"> © 2026 Mental Health Care
+<br> Designed for Educational Purpose Only
+</font> </center>
+<script>function validateRegistration(){ let firstName = document.getElementById("firstName").value.trim(); let lastName = document.getElementById("lastName").value.trim(); let email = document.getElementById("email").value.trim(); let mobile = document.getElementById("mobile").value.trim(); let password = document.getElementById("password").value; let confirmPassword = document.getElementById("confirmPassword").value; let ageGroup = document.getElementById("ageGroup").value; let message = document.getElementById("registrationMessage"); let namePattern = /^[A-Za-z ]+$/; let emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/; let mobilePattern = /^[0-9]+$/; if(firstName == "" || !namePattern.test(firstName)){ message.innerHTML = "❌ Enter a valid first name."; message.className = "invalid"; document.getElementById("firstName") .classList.add("invalidInput"); return false; } if(lastName == "" || !namePattern.test(lastName)){ message.innerHTML = "❌ Enter a valid last name."; message.className = "invalid"; document.getElementById("lastName") .classList.add("invalidInput"); return false; } if(!emailPattern.test(email)){ message.innerHTML = "❌ Enter a valid email address."; message.className = "invalid"; document.getElementById("email") .classList.add("invalidInput"); return false; } if(!mobilePattern.test(mobile) || mobile.length != 10){ message.innerHTML = "❌ Mobile number must contain exactly 10 digits."; message.className = "invalid"; document.getElementById("mobile") .classList.add("invalidInput"); return false; } let passwordLength = password.length; if(passwordLength < 8){ message.innerHTML = "❌ Password must contain at least 8 characters."; message.className = "invalid"; document.getElementById("password") .classList.add("invalidInput"); return false; } if(password != confirmPassword){ message.innerHTML = "❌ Passwords do not match."; message.className = "invalid"; document.getElementById("confirmPassword") .classList.add("invalidInput"); return false; } if(ageGroup == ""){ message.innerHTML = "❌ Please select your age group."; message.className = "invalid"; document.getElementById("ageGroup") .classList.add("invalidInput"); return false; } let nameLength = firstName.length + lastName.length; let passwordScore = passwordLength * 2; let mobileScore = mobile.length + passwordScore; if(nameLength > 0 && mobileScore >= 26){ message.innerHTML = "✅ Registration Successful! All details are valid."; message.className = "valid"; document.getElementById("firstName") .classList.add("validInput"); document.getElementById("lastName") .classList.add("validInput"); document.getElementById("email") .classList.add("validInput"); document.getElementById("mobile") .classList.add("validInput"); document.getElementById("password") .classList.add("validInput"); document.getElementById("confirmPassword") .classList.add("validInput"); return false; } return false; } function validateContact(){
+let contactName = document.getElementById("contactName").value.trim();
+let contactEmail = document.getElementById("contactEmail").value.trim();
+let contactMobile = document.getElementById("contactMobile").value.trim();
+let contactMessage = document.getElementById("contactMessage").value.trim();
+let message = document.getElementById("contactMessageBox");
+let namePattern = /^[A-Za-z ]+$/;
+let emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+let mobilePattern = /^[0-9]+$/;
+
+if(contactName == "" || !namePattern.test(contactName)){
+message.innerHTML = "❌ Enter a valid name.";
+message.className = "invalid";
+document.getElementById("contactName").classList.add("invalidInput");
+return false;
+}
+if(!emailPattern.test(contactEmail)){
+message.innerHTML = "❌ Enter a valid email address.";
+message.className = "invalid";
+document.getElementById("contactEmail").classList.add("invalidInput");
+return false;
+}
+if(!mobilePattern.test(contactMobile) || contactMobile.length != 10){
+message.innerHTML = "❌ Mobile number must contain exactly 10 digits.";
+message.className = "invalid";
+document.getElementById("contactMobile").classList.add("invalidInput");
+return false;
+}
+if(contactMessage == ""){
+message.innerHTML = "❌ Please enter your message.";
+message.className = "invalid";
+document.getElementById("contactMessage").classList.add("invalidInput");
+return false;
+}
+
+message.innerHTML = "✅ Message sent successfully! All details are valid.";
+message.className = "valid";
+document.getElementById("contactName").classList.add("validInput");
+document.getElementById("contactEmail").classList.add("validInput");
+document.getElementById("contactMobile").classList.add("validInput");
+document.getElementById("contactMessage").classList.add("validInput");
+return false;
+}
+ function calculateScore(){ let total = 0; for(let i = 1; i <= 10; i++){ let answer = document.querySelector( 'input[name=q' + i + ']:checked' ); if(!answer){ alert( "Please answer all questions." ); return; } total += parseInt(answer.value); } let level; let msg; if(total >= 36){ level = "🌟 Flourishing"; msg = "Excellent emotional resilience."; } else if(total >= 30){ level = "🌿 Healthy"; msg = "Overall good mental well-being."; } else if(total >= 24){ level = "🌼 Needs Attention"; msg = "Some stress is present. Improve self-care."; } else if(total >= 16){ level = "🍂 At Risk"; msg = "Consider talking with someone you trust."; } else{ level = "❤️ High Concern"; msg = "Please seek support from a trusted person or mental health professional."; } document.getElementById("resultBox") .style.display = "block"; document.getElementById("score") .innerHTML = "Wellness Score: " + total + " / 40"; document.getElementById("level") .innerHTML = level; document.getElementById("message") .innerHTML = msg; }
+const moodOptions = [
+    {emoji:"😄", score:5, label:"Very Happy"},
+    {emoji:"🙂", score:4, label:"Happy"},
+    {emoji:"😐", score:3, label:"Okay"},
+    {emoji:"😔", score:2, label:"Low"},
+    {emoji:"😢", score:1, label:"Very Low"}
+];
+
+const days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+
+function loadMoodTracker() {
+    document.getElementById("weekDate").innerHTML =
+        new Date().toLocaleDateString("en-IN", {day:"2-digit", month:"short", year:"numeric"});
+
+    const container = document.getElementById("moodDays");
+    container.innerHTML = "";
+
+    days.forEach((day, index) => {
+        const div = document.createElement("div");
+        div.className = "day";
+        div.innerHTML = "<h3>" + day + "</h3><p></p>";
+
+        moodOptions.forEach(option => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "emoji-btn";
+            button.textContent = option.emoji;
+            button.title = option.label;
+            button.onclick = function() {
+                selectMood(index, option.score, option.emoji, button);
+            };
+            div.appendChild(button);
+        });
+
+        container.appendChild(div);
+    });
+
+    loadSavedMoods();
+    showHistory();
+}
+
+function selectMood(dayIndex, score, emoji, button) {
+    const day = document.querySelectorAll(".day")[dayIndex];
+
+    day.querySelectorAll(".emoji-btn").forEach(btn => {
+        btn.classList.remove("selected");
+    });
+
+    button.classList.add("selected");
+
+    const moods = JSON.parse(localStorage.getItem("weeklyMoods") || "{}");
+    moods[days[dayIndex]] = {score: score, emoji: emoji};
+    localStorage.setItem("weeklyMoods", JSON.stringify(moods));
+}
+
+function loadSavedMoods() {
+    const moods = JSON.parse(localStorage.getItem("weeklyMoods") || "{}");
+
+    days.forEach((day, index) => {
+        if (moods[day]) {
+            const buttons = document.querySelectorAll(".day")[index].querySelectorAll(".emoji-btn");
+            buttons[moodOptions.findIndex(option => option.score === moods[day].score)].classList.add("selected");
+        }
+    });
+}
+
+function analyzeMood() {
+    const moods = JSON.parse(localStorage.getItem("weeklyMoods") || "{}");
+
+    if (days.some(day => !moods[day])) {
+        alert("Please select a mood for all 7 days.");
+        return;
+    }
+
+    let total = 0;
+    days.forEach(day => total += moods[day].score);
+
+    let title, statement, suggestions;
+
+    if (total >= 29) {
+        title = "🌟 You had a very positive week!";
+        statement = "Your mood was mostly positive this week. Keep doing the activities and habits that support your well-being.";
+        suggestions = ["💧 Drink enough water", "🚶 Go for a walk", "😊 Spend time doing something you enjoy", "📖 Continue journaling"];
+    } else if (total >= 22) {
+        title = "🌿 You had a generally good week.";
+        statement = "Your week had a healthy balance of emotions, with some ups and downs. Continue taking care of yourself.";
+        suggestions = ["💧 Drink more water", "🌳 Spend time outdoors", "😴 Get enough sleep", "📖 Journal your thoughts"];
+    } else if (total >= 15) {
+        title = "🌼 Your week had some emotional ups and downs.";
+        statement = "Some days seem to have been difficult. Give yourself time to rest and focus on small positive habits.";
+        suggestions = ["😴 Take a short nap", "🚶 Go for a gentle walk", "📖 Write in a journal", "💬 Talk to someone you trust"];
+    } else {
+        title = "❤️ This week seems to have been difficult.";
+        statement = "You may be experiencing a lot of low moods. Please be gentle with yourself and consider reaching out to someone you trust or a mental health professional.";
+        suggestions = ["💬 Talk to someone you trust", "🚶 Take a short walk", "💧 Drink water and eat regularly", "🧘 Take time to rest and breathe"];
+    }
+
+    document.getElementById("moodResult").style.display = "block";
+    document.getElementById("moodTitle").innerHTML = title;
+    document.getElementById("moodScore").innerHTML = total;
+    document.getElementById("moodStatement").innerHTML = statement;
+
+    const suggestionBox = document.getElementById("suggestions");
+    suggestionBox.innerHTML = "";
+    suggestions.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "suggestion";
+        div.innerHTML = item;
+        suggestionBox.appendChild(div);
+    });
+
+    saveWeek(total, title);
+}
+
+function saveWeek(total, title) {
+    const history = JSON.parse(localStorage.getItem("moodHistory") || "[]");
+    const currentWeek = {
+        week: 1,
+        score: total,
+        title: title,
+        date: new Date().toLocaleDateString("en-IN")
+    };
+
+    if (history.length === 0 || history[history.length - 1].date !== currentWeek.date) {
+        history.push(currentWeek);
+        localStorage.setItem("moodHistory", JSON.stringify(history));
+    }
+
+    showHistory();
+}
+
+function showHistory() {
+    const history = JSON.parse(localStorage.getItem("moodHistory") || "[]");
+    if (!history.length) return;
+
+    document.getElementById("moodHistory").style.display = "block";
+    const list = document.getElementById("historyList");
+    list.innerHTML = "";
+
+    history.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "history-item";
+        div.innerHTML = "<b>Week " + item.week + "</b> | " + item.date +
+                        "<br>Mood Score: " + item.score + " / 35<br>" + item.title;
+        list.appendChild(div);
+    });
+}
+
+loadMoodTracker();
+
+
+</script> </body>
+</html>
